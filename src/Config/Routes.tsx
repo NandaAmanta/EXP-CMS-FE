@@ -1,0 +1,22 @@
+import { Route, Routes } from "react-router-dom"
+import Dashboard from '../Pages/Dashboard';
+import MasterDataNavbar from '../Pages/MasterDataNavbar';
+import MasterDataBanner from '../Pages/MasterDataBanner';
+import MasterDataFooter from '../Pages/MasterDataFooter';
+import CreateWebsite from '../Pages/CreateWebsite';
+import Settings from '../Pages/Settings';
+
+
+const Routing: React.FC = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<Dashboard />} />
+      <Route path="/master-data/navbar" element={<MasterDataNavbar />} />
+      <Route path="/master-data/banner" element={<MasterDataBanner />} />
+      <Route path="/master-data/footer" element={<MasterDataFooter />} />
+      <Route path="/create-website" element={<CreateWebsite />} />
+      <Route path="/settings" element={<Settings />} />
+    </Routes>
+  );
+}
+export default Routing;
