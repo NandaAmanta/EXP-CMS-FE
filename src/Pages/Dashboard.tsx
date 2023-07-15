@@ -1,6 +1,9 @@
+import CardList from '../Components/CardList/CardList';
 function Dashboard() {
   return (
-    <div>Dashboard</div>
+    <>
+      <CardList />
+    </>
   )
 }
 export default Dashboard
