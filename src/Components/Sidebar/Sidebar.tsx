@@ -262,7 +262,7 @@ function Sidebar({
         >
           <ArrowBackIosNewOutlinedIcon onClick={toggle} />
         </motion.div>
-        <main className="container" style={{margin: "12px !important"}}>
+        <main style={{marginLeft: "70px !important"}}>
           <div className="topAdmin">{children}</div>
         </main>
       </div>
