@@ -2,14 +2,11 @@ import React, { useState } from "react";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import Routes from "./Config/Routes";
 import { AiFillHome } from "react-icons/ai";
-import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 
 interface Route {
   path: string;
   name: string;
   icon: JSX.Element;
-  iconClose?: JSX.Element;
-  iconOpen?: JSX.Element;
   subRoutes?: Route[];
 }
 
@@ -17,8 +14,6 @@ const route: Route = {
   path: "/",
   name: "Dashboard",
   icon: <AiFillHome />,
-  iconClose: <MdKeyboardArrowDown />,
-  iconOpen: <MdKeyboardArrowUp />,
 };
 
 const showAnimation = {
@@ -40,17 +35,27 @@ const showAnimation = {
 
 const App: React.FC = () => {
   const [isOpen, setOpen] = useState(false);
+  const [isSubmenuOpen, setSubmenuOpen] = useState(false); // Add isSubmenuOpen state
+  const currentPath = window.location.pathname;
 
+  const isLoginRoute = (path: string) => {
+    return path === "/login";
+  };
   return (
     <>
-      <Sidebar
-        setOpen={setOpen}
-        menu={route}
-        showAnimation={showAnimation}
-        isOpen={isOpen}
-      >
+      {isLoginRoute(currentPath) ? (
         <Routes />
-      </Sidebar>
+      ) : (
+        <Sidebar
+          setOpen={setOpen}
+          menu={route}
+          showAnimation={showAnimation}
+          isOpen={isOpen}
+          isSubmenuOpen={isSubmenuOpen} // Pass the isSubmenuOpen prop
+        >
+          <Routes />
+        </Sidebar>
+      )}
     </>
   );
 };
