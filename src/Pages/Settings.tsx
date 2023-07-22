@@ -1,6 +1,11 @@
+import { useEffect } from "react";
+
+
 function Settings() {
-  return (
-    <div>Settings</div>
-  )
+  useEffect(() => {
+    document.title = "CMS EXP - Settings";
+  });
+
+  return <div>Settings</div>;
 }
-export default Settings
+export default Settings;
