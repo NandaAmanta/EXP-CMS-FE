@@ -1,19 +1,15 @@
+// Sidebar.tsx
 import React, { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import Logo from "../../Assets/exp-logo.png";
 import SidebarItem from "./SidebarItem";
 import "./Sidebar.scss";
+import {navLink} from "./SidebarMenu"
 
 // Icons
-import { AiFillHome } from "react-icons/ai";
-import { TbLayoutNavbarExpand } from "react-icons/tb";
-import { BsFileImage } from "react-icons/bs";
-import { RiLayoutBottom2Fill } from "react-icons/ri";
-import { IoIosCreate } from "react-icons/io";
-import { IoSettings } from "react-icons/io5";
 import ArrowBackIosNewOutlinedIcon from "@mui/icons-material/ArrowBackIosNewOutlined";
-import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 interface Route {
   path: string;
@@ -44,55 +40,11 @@ interface SidebarItemProps {
   };
   subRoutes?: Route[];
   isOpen: boolean;
+  isSubmenuOpen: boolean;
   children?: React.ReactNode;
 }
 
-const navLink: Route[] = [
-  {
-    path: "/",
-    name: "Dashboard",
-    icon: <AiFillHome />,
-  },
-  // {
-  //   path: "/master-data/",
-  //   name: "Master Data",
-  //   icon: <MdKeyboardArrowUp />,
 
-  //   subNav: [
-  //     "/master-data/navbar",
-  //     "/master-data/banner",
-  //     "/master-data/footer",
-  //   ],
-    
-  //   subRoutes: [
-  //   ],
-  // },
-  {
-    path: "/master-data/navbar",
-    name: "Navbar",
-    icon: <TbLayoutNavbarExpand />,
-  },
-  {
-    path: "/master-data/banner",
-    name: "Banner",
-    icon: <BsFileImage />,
-  },
-  {
-    path: "/master-data/footer",
-    name: "Footer",
-    icon: <RiLayoutBottom2Fill />,
-  },
-  {
-    path: "/create-website",
-    name: "Create Website",
-    icon: <IoIosCreate />,
-  },
-  {
-    path: "/settings",
-    name: "Settings",
-    icon: <IoSettings />,
-  },
-];
 
 function Sidebar({
   setOpen,
@@ -157,14 +109,16 @@ function Sidebar({
                 >
                   Main Menu
                 </span>
-                {navLink.slice(0, 5).map((route, index) => {
+                {navLink.slice(0, 3).map((route, index) => {
                   if (route.subRoutes) {
                     return (
                       <SidebarItem
                         setOpen={setOpen}
-                        menu={menu}
+                        menu={route}
                         showAnimation={showAnimation}
+                        subRoutes={route.subRoutes}
                         isOpen={isOpen}
+                        isSubmenuOpen={menu === route && isOpen} // Check if submenu is open
                         key={index}
                       />
                     );
@@ -203,7 +157,6 @@ function Sidebar({
                   );
                 })}
 
-                {/* Display Settings and Change theme */}
                 <div
                   className="line-sidebar"
                   style={{ width: isOpen ? "180px" : "48px" }}
@@ -217,12 +170,12 @@ function Sidebar({
                 >
                   Preference
                 </span>
-                {navLink.slice(5).map((route, index) => (
+                {navLink.slice(3).map((route, index) => (
                   <NavLink
                     to={route.path}
                     key={index}
                     className={`${
-                      index + 5 === active
+                      index + 3 === active
                         ? "routes__link active"
                         : "routes__link"
                     }`}
@@ -259,10 +212,11 @@ function Sidebar({
           }}
           initial={false}
           className={`bar`}
+          onClick={toggle}
         >
-          <ArrowBackIosNewOutlinedIcon onClick={toggle} />
+          {isOpen ? <ArrowBackIosNewOutlinedIcon /> : <ArrowForwardIosIcon />}
         </motion.div>
-        <main style={{marginLeft: "70px !important"}}>
+        <main style={{ marginLeft: "70px !important" }}>
           <div className="topAdmin">{children}</div>
         </main>
       </div>
