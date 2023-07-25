@@ -39,7 +39,7 @@ const App: React.FC = () => {
   const currentPath = window.location.pathname;
 
   const isLoginRoute = (path: string) => {
-    return path === "/login";
+    return path === "/login" || "/signup";
   };
   return (
     <>
