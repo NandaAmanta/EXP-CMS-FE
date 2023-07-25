@@ -6,6 +6,7 @@ import MasterDataFooter from '../Pages/MasterDataFooter';
 import CreateWebsite from '../Pages/CreateWebsite';
 import Settings from '../Pages/Settings';
 import Login from "../Pages/Login";
+import SignUp from "../Pages/SignUp";
 
 
 const Routing: React.FC = () => {
@@ -18,6 +19,7 @@ const Routing: React.FC = () => {
       <Route path="/create-website" element={<CreateWebsite />} />
       <Route path="/settings" element={<Settings />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<SignUp />} />
     </Routes>
   );
 }
