@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import NavbarMasterData from '../Components/NavbarCard/NavbarMasterData';
 
 function MasterDataNavbar() {
   useEffect(() => {
@@ -6,7 +7,9 @@ function MasterDataNavbar() {
   })
 
   return (
-    <div>MasterDataNavbar</div>
+    <div>
+      <NavbarMasterData></NavbarMasterData>
+    </div>
   )
 }
 export default MasterDataNavbar
