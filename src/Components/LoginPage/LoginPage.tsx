@@ -15,17 +15,17 @@ function Login() {
               <div className="form_text">
                 <h1>Log in</h1>
                 <p>
-                  Log in with your data that you entered <br /> during your
+                  Log in with your data that you entered during your
                   registration
                 </p>
               </div>
               <form action="">
                 <div className="form_group">
-                  <label htmlFor="email">Enter your email address</label>
+                  <label htmlFor="email">Enter your email address</label> <br />
                   <input type="email" id="email" name="email" required />
                 </div>
                 <div className="form_group">
-                  <label htmlFor="password">Enter your password</label>
+                  <label htmlFor="password">Enter your password</label> <br />
                   <input
                     type="password"
                     id="password"
@@ -35,26 +35,17 @@ function Login() {
                 </div>
                 <button type="submit">Log in</button> <br />
               </form>
-              <div className="form_forget">
+              <div className="form_group">
                 <a href=""> Forgot Password?</a>
               </div>
               <div className="line-sidebar"></div>
-              <div className="form_signup">
-                <a href="">Sign up now</a>
-              </div>
             </div>
           </div>
-
-        </div>
+          
           <div className="login__welcome">
-            <div className="welcome_text">
-              <span>Nice to see you again</span>
-              <h1>Welcome Back</h1>
-            </div>
-            <div className="welcome_img">
-              <img src={welcomee} alt="" />
-            </div>
+            <img src={welcomee} alt="" />
           </div>
+        </div>
       </div>
     </>
   );

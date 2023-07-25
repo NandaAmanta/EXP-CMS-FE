@@ -1,150 +1,19 @@
 @use "../../Style/" as *;
 
 .login-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     .login {
-        max-width: 50%;
+        max-width: 1000px;
         width: 100vw;
+        display: flex;
+        border-radius: 5px;
         background-color: $sidebar-color;
 
-        &__page {
-            padding: 5% 10% 5% 10%;
-            flex: 1;
-        }
-
-        &__form {
-            .form_top {
-                margin-bottom: 4%;
-
-                img {
-                    max-width: 100%;
-                    width: 7vw;
-                }
-            }
-
-            .form_text {
-                h1 {
-                    font-size: 2.5vw;
-                }
-
-                p {
-                    color: $text-dark;
-                    margin-top: 2%;
-                    margin-bottom: 6%;
-                    font-size: 1.1vw;
-                }
-            }
-
-            .form_forget {
-                text-align: center;
-                margin-bottom: 4%;
-
-                a {
-                    color: $text-white;
-                    font-size: 1.2vw;
-                    font-weight: 300;
-                }
-            }
-
-            .form_signup {
-                text-align: center;
-                margin-top: 6%;
-
-                a {
-                    color: $text-white;
-                    font-size: 1vw;
-                    font-weight: 600;
-                    padding: 8px 25px;
-                    border-radius: 100px;
-                    border: 1px solid $text-white;
-                    transition: .1s ease;
-
-                    &:hover {
-                        background-color: $text-white;
-                        color: $body-bg;
-                    }
-                }
-            }
-
-
-            form {
-                .form_group {
-                    margin: 5% 0 0 0;
-                    display: flex;
-                    flex-direction: column;
-
-                    label {
-                        font-weight: 600;
-                        font-size: 1.1vw;
-                        display: inline-block;
-                    }
-
-                    input {
-                        width: 100%;
-                        padding: 1.5% 3%;
-                        border-radius: 5px;
-                        background: #33333E;
-                        box-shadow: 0px 2px 5px 0px rgba(3, 3, 3, 0.25);
-                        color: $text-white;
-                        margin-top: 12px;
-                        font-size: 1.2vw;
-                        transition: .3s;
-                        &:focus {
-                                border: 1px solid $text-white;
-                                box-shadow: 0px 0px 10px 2px rgba(238, 238, 246, 0.25);
-                            }
-                    }
-
-                }
-
-                button {
-                    width: 100%;
-                    padding: 10px 10px;
-                    border-radius: 5px;
-                    background: $text-white;
-                    color: #4A4A4A;
-                    margin-top: 6%;
-                    font-size: 1.3vw;
-                    font-weight: 700;
-                    margin-bottom: 4%;
-                }
-            }
-        }
-
-    }
-
-    .login__welcome {
-        background-image: url("../../Assets/bg-login.png");
-        padding: 6% 5% 0 5%;
-        position: fixed;
-        right: 0;
-        top: 0;
-        height: 100vh;
-        width: 50%;
-
-        .welcome_text {
-            color: $body-bg !important;
-            text-align: center;
-            margin-bottom: 50px;
-
-            span {
-                font-size: 1.5vw;
-                font-weight: 300;
-            }
-
-            h1 {
-                font-size: 2.5vw;
-            }
-        }
-
-        .welcome_img {
-            img {
-                margin: auto;
-                max-width: 100%;
-                width: 30vw;
-                display: flex;
-            }
+        &__login_page {
+            
         }
     }
-
 }
