@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import NavbarMasterData from '../Components/NavbarCard/NavbarMasterData';
+import NavbarMasterData from '../Components/NavbarMasterData/NavbarMasterData';
 
 function MasterDataNavbar() {
   useEffect(() => {
