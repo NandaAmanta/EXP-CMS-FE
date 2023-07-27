@@ -22,7 +22,13 @@ function Login() {
               <form action="">
                 <div className="form_group">
                   <label htmlFor="email">Enter your email address</label>
-                  <input type="email" id="email" name="email" required />
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    className="input input-bordered w-full max-w-lg"
+                    required
+                  />
                 </div>
                 <div className="form_group">
                   <label htmlFor="password">Enter your password</label>
@@ -44,17 +50,16 @@ function Login() {
               </div>
             </div>
           </div>
-
         </div>
-          <div className="login__welcome">
-            <div className="welcome_text">
-              <span>Nice to see you again</span>
-              <h1>Welcome Back</h1>
-            </div>
-            <div className="welcome_img">
-              <img src={welcomee} alt="" />
-            </div>
+        <div className="login__welcome">
+          <div className="welcome_text">
+            <span>Nice to see you again</span>
+            <h1>Welcome Back</h1>
           </div>
+          <div className="welcome_img">
+            <img src={welcomee} alt="" />
+          </div>
+        </div>
       </div>
     </>
   );
