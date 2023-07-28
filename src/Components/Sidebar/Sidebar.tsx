@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import Logo from "../../Assets/exp-logo.png";
+import Logo from "../../Assets/exp-logo.webp";
 import SidebarItem from "./SidebarItem";
 import "./Sidebar.scss";
 import {navLink} from "./SidebarMenu"

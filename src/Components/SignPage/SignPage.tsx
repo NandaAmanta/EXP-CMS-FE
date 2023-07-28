@@ -1,5 +1,5 @@
-import signup_bg from "../../Assets/signup_bg.png";
-import Logo from "../../Assets/exp-logo.png";
+import signup_bg from "../../Assets/signup_bg.webp";
+import Logo from "../../Assets/exp-logo.webp";
 import "./SignPage.scss";
 
 function SignUp() {
@@ -13,20 +13,20 @@ function SignUp() {
                 <img src={Logo} alt="" />
               </div>
               <div className="form_text">
-                <h1>Sign up.</h1>
-                <p>
+                <h1 className="font-bold">Sign up.</h1>
+                <p className="font-light">
                   Register your account first and signup <br /> with your
                   registered data.
                 </p>
               </div>
-              <form action="">
+              <form action="" className="form-control">
                 <div className="form_group">
                   <label htmlFor="name">Enter your name </label>
-                  <input type="text" id="name" name="name" required />
+                  <input type="text" id="name" name="name" className="input input-bordered w-full" required />
                 </div>
                 <div className="form_group">
                   <label htmlFor="email">Enter your email address</label>
-                  <input type="email" id="email" name="email" required />
+                  <input type="email" id="email" name="email" className="input input-bordered w-full" required />
                 </div>
                 <div className="form_group">
                   <label htmlFor="password">Enter your password</label>
@@ -34,6 +34,7 @@ function SignUp() {
                     type="password"
                     id="password"
                     name="password"
+                    className="input input-bordered w-full"
                     required
                   />
                 </div>
@@ -43,6 +44,7 @@ function SignUp() {
                     type="password"
                     id="password"
                     name="password"
+                    className="input input-bordered w-full"
                     required
                   />
                 </div>

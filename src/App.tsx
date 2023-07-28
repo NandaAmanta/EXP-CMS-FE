@@ -39,11 +39,18 @@ const App: React.FC = () => {
   const currentPath = window.location.pathname;
 
   const isLoginRoute = (path: string) => {
-    return path === "/login" || "/signup";
+    return path === "/login";
   };
+
+  const isSignupRoute = (path: string) => {
+    return path === "/signup";
+  };
+
   return (
     <>
       {isLoginRoute(currentPath) ? (
+        <Routes />
+      ) : isSignupRoute(currentPath) ? (
         <Routes />
       ) : (
         <Sidebar

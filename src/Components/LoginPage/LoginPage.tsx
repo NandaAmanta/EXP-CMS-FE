@@ -1,5 +1,5 @@
 import welcomee from "../../Assets/welcomee.svg";
-import Logo from "../../Assets/exp-logo.png";
+import Logo from "../../Assets/exp-logo.webp";
 import "./LoginPage.scss";
 
 function Login() {
@@ -13,20 +13,20 @@ function Login() {
                 <img src={Logo} alt="" />
               </div>
               <div className="form_text">
-                <h1>Log in</h1>
-                <p>
+                <h1 className="font-bold">Log in</h1>
+                <p className="font-light">
                   Log in with your data that you entered <br /> during your
                   registration
                 </p>
               </div>
-              <form action="">
+              <form action="" className="form-control">
                 <div className="form_group">
                   <label htmlFor="email">Enter your email address</label>
                   <input
                     type="email"
                     id="email"
                     name="email"
-                    className="input input-bordered w-full max-w-lg"
+                    className="input input-bordered w-full"
                     required
                   />
                 </div>
@@ -36,10 +36,11 @@ function Login() {
                     type="password"
                     id="password"
                     name="password"
+                    className="input input-bordered w-full"
                     required
                   />
                 </div>
-                <button type="submit">Log in</button> <br />
+                <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" type="submit">Log in</button> <br />
               </form>
               <div className="form_forget">
                 <a href=""> Forgot Password?</a>
@@ -53,8 +54,8 @@ function Login() {
         </div>
         <div className="login__welcome">
           <div className="welcome_text">
-            <span>Nice to see you again</span>
-            <h1>Welcome Back</h1>
+            <span className="font-light">Nice to see you again</span>
+            <h1 className="font-bold">Welcome Back</h1>
           </div>
           <div className="welcome_img">
             <img src={welcomee} alt="" />
