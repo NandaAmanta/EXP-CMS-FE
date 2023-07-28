@@ -1,5 +1,7 @@
 import welcomee from "../../Assets/welcomee.svg";
 import Logo from "../../Assets/exp-logo.webp";
+import Input from "../Input/Input";
+import Button from "../Button/Button";
 import "./LoginPage.scss";
 
 function Login() {
@@ -21,33 +23,37 @@ function Login() {
               </div>
               <form action="" className="form-control">
                 <div className="form_group">
-                  <label htmlFor="email">Enter your email address</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="input input-bordered w-full"
-                    required
+                  <Input
+                    label="Enter your email address"
+                    inputProps={{
+                      type: "email",
+                      id: "email",
+                      name: "email",
+                      className: "input input-bordered w-full",
+                    }}
                   />
                 </div>
                 <div className="form_group">
-                  <label htmlFor="password">Enter your password</label>
-                  <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    className="input input-bordered w-full"
-                    required
+                  <Input
+                    label="Enter your password"
+                    inputProps={{
+                      type: "password",
+                      id: "password",
+                      name: "password",
+                      className: "input input-bordered w-full",
+                    }}
                   />
                 </div>
-                <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" type="submit">Log in</button> <br />
+                <Button type="submit">Log in</Button>
+                <br />
               </form>
+
               <div className="form_forget">
                 <a href=""> Forgot Password?</a>
               </div>
               <div className="line-sidebar"></div>
               <div className="form_signup">
-                <a href="">Sign up now</a>
+                <a href="/signup">Sign up now</a>
               </div>
             </div>
           </div>

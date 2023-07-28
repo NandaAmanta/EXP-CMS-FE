@@ -1,5 +1,7 @@
 import signup_bg from "../../Assets/signup_bg.webp";
 import Logo from "../../Assets/exp-logo.webp";
+import Input from "../Input/Input"
+import Button from "../Button/Button";
 import "./SignPage.scss";
 
 function SignUp() {
@@ -21,45 +23,64 @@ function SignUp() {
               </div>
               <form action="" className="form-control">
                 <div className="form_group">
-                  <label htmlFor="name">Enter your name </label>
-                  <input type="text" id="name" name="name" className="input input-bordered w-full" required />
-                </div>
-                <div className="form_group">
-                  <label htmlFor="email">Enter your email address</label>
-                  <input type="email" id="email" name="email" className="input input-bordered w-full" required />
-                </div>
-                <div className="form_group">
-                  <label htmlFor="password">Enter your password</label>
-                  <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    className="input input-bordered w-full"
-                    required
+                  <Input
+                    label="Enter your name"
+                    inputProps={{
+                      type: "name",
+                      id: "name",
+                      name: "name",
+                      className: "input input-bordered w-full",
+                    }}
                   />
                 </div>
                 <div className="form_group">
-                  <label htmlFor="password">Confirm password</label>
-                  <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    className="input input-bordered w-full"
-                    required
+                  <Input
+                    label="Enter your email address"
+                    inputProps={{
+                      type: "email",
+                      id: "email",
+                      name: "email",
+                      className: "input input-bordered w-full",
+                    }}
                   />
                 </div>
-                <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" type="submit">Create Account</button> <br />
+                <div className="form_group">
+                  <Input
+                    label="Enter your password"
+                    inputProps={{
+                      type: "password",
+                      id: "password",
+                      name: "password",
+                      className: "input input-bordered w-full",
+                    }}
+                  />
+                </div>
+                <div className="form_group">
+                  <Input
+                    label="Confirm password"
+                    inputProps={{
+                      type: "password",
+                      id: "password",
+                      name: "password",
+                      className: "input input-bordered w-full",
+                    }}
+                  />
+                </div>
+                <Button type="submit">Create Account</Button>
+                <br />
               </form>
               <div className="form_forget">
-               <span> Alerdy have an account? <a href="">Log in.</a></span> 
+                <span>
+                  Already have an account? <a href="/login">Log in.</a>
+                </span>
               </div>
             </div>
           </div>
         </div>
         <div className="signup__welcome">
           <div className="welcome_text">
-            <span>Hi! Welcome </span>
-            <h1>Glad To See You</h1>
+            <span className="font-light">Hi! Welcome </span>
+            <h1 className="font-bold">Glad To See You</h1>
           </div>
           <div className="welcome_img">
             <img src={signup_bg} alt="" />
