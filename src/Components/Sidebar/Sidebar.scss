@@ -87,12 +87,8 @@
             color: $text-white;
         }
 
-           &:nth-child(7) {
-               // Select the fifth child element
-              &::after {
-                content: "preference"; // Add the text "preference"
-              }
-           }
+
+         
     }
 
     span {
@@ -100,9 +96,6 @@
         color: $text-light;
         font-weight: 500;
         
-        &:nth-child(2) {
-            background-color: red;
-        }
     }
 
     svg {
