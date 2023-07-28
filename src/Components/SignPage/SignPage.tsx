@@ -48,14 +48,10 @@ function SignUp() {
                     required
                   />
                 </div>
-                <button type="submit">Create Account</button> <br />
+                <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" type="submit">Create Account</button> <br />
               </form>
               <div className="form_forget">
-                <a href=""> Forgot Password?</a>
-              </div>
-              <div className="line-sidebar"></div>
-              <div className="form_signup">
-                <a href="">Sign up now</a>
+               <span> Alerdy have an account? <a href="">Log in.</a></span> 
               </div>
             </div>
           </div>
