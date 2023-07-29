@@ -1,6 +1,10 @@
+import ProgressIcon from '../Components/ProgressIcon/ProgressIcon';
+
 function CreateWebsite() {
   return (
-    <div>CreateWebsite</div>
-  )
+    <div>
+      <ProgressIcon />
+    </div>
+  );
 }
 export default CreateWebsite
