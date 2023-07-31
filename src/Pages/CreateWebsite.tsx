@@ -1,9 +1,9 @@
-import {Stepper} from '../Components/Stepper/Stepper';
+import Stepper from '../Components/Stepper/Stepper';
 
 function CreateWebsite() {
   return (
     <div>
-      <Stepper step={1} />
+      <Stepper />
     </div>
   );
 }
