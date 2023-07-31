@@ -1,9 +1,9 @@
-import ProgressIcon from '../Components/ProgressIcon/ProgressIcon';
+import {Stepper} from '../Components/Stepper/Stepper';
 
 function CreateWebsite() {
   return (
     <div>
-      <ProgressIcon />
+      <Stepper step={1} />
     </div>
   );
 }

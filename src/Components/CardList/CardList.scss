@@ -9,21 +9,12 @@
     // height: 45vh;
     // padding: 10px 3px;
 
-    &__card_add {
-        .card {
-            margin: 0 40px 0 0;
-            margin-bottom: 10px;
-            border: 1px dashed #7F7F87;
-        }
-    }
-
 
     &__card_list {
         margin: 0 40px 0 0;
-        width: 151px;
-        height: 231px;
         box-shadow: 0px 2px 5px 0px rgba(3, 3, 3, 0.30);
         margin-bottom: 10px;
+        border-radius: 10px;
 
         .card {
             padding: 20px 0;
@@ -49,8 +40,6 @@
             }
 
             &__card_footer {
-                position: relative;
-                top: 66px;
                 border-radius: 0px 0px 10px 10px;
                 background: rgba(238, 238, 246, 0.08);
             }
@@ -58,12 +47,6 @@
     }
 
     &__add_tools {
-        position: relative;
-        top: 56px;
-        text-align: center;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
         color: $text-light;
         transition: .1s ease-in-out;
 
