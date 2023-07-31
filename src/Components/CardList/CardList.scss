@@ -1,8 +1,5 @@
 @use "../../Style/" as *;
 
-.top_dashboard {
-    margin: 15px 0;
-}
 
 .dashboard {
     display: flex;
@@ -12,26 +9,12 @@
     // height: 45vh;
     // padding: 10px 3px;
 
-    &__card_add {
-        .card {
-            margin: 0 40px 0 0;
-            width: 151px;
-            height: 231px;
-            border-radius: 10px;
-            margin-bottom: 10px;
-            border: 1px dashed #7F7F87;
-        }
-    }
-
 
     &__card_list {
         margin: 0 40px 0 0;
-        width: 151px;
-        height: 231px;
-        flex-shrink: 0;
-        border-radius: 10px;
         box-shadow: 0px 2px 5px 0px rgba(3, 3, 3, 0.30);
         margin-bottom: 10px;
+        border-radius: 10px;
 
         .card {
             padding: 20px 0;
@@ -57,8 +40,6 @@
             }
 
             &__card_footer {
-                position: relative;
-                top: 66px;
                 border-radius: 0px 0px 10px 10px;
                 background: rgba(238, 238, 246, 0.08);
             }
@@ -66,12 +47,6 @@
     }
 
     &__add_tools {
-        position: relative;
-        top: 56px;
-        text-align: center;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
         color: $text-light;
         transition: .1s ease-in-out;
 
@@ -81,56 +56,3 @@
     }
 }
 
-.top_overview {
-    margin-top: 120px;
-    margin-bottom: 35px;
-}
-
-.overview {
-    &__top {
-        margin-bottom: 35px;
-    }
-
-    &__text_chart {
-        margin: 0 0 20px 0;
-        display: flex;
-        justify-content: space-between;
-        font-weight: 500;
-
-        select {
-            background: transparent;
-            border: none;
-            color: $text-white;
-            font-weight: 500;
-
-        }
-    }
-
-    // &__chart {
-
-    // }
-
-    &__total_used {
-        display: flex;
-        margin-top: 20px;
-
-        .text_total {
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            margin: 0 40px 0 0;
-
-            span {
-                font-size: 28px;
-                font-weight: 500;
-
-                &:nth-child(2) {
-                    font-size: 14px;
-                    font-weight: 400;
-                    color: $text-dark;
-                }
-            }
-        }
-    }
-
-}

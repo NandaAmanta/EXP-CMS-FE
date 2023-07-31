@@ -1,0 +1,15 @@
+@use "../../Style/" as *;
+
+ .button {
+     width: 100%;
+     background: $text-white !important;
+     color: #4A4A4A !important;
+     margin-top: 6%;
+     font-size: 1.3vw !important;
+     font-weight: 700 !important;
+     margin-bottom: 4%;
+
+     &:hover {
+         background-color: #C8CEDE !important;
+     }
+ }

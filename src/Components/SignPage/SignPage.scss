@@ -1,15 +1,10 @@
 @use "../../Style/" as *;
 
-.login-top {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.signup-top {
 
-    .login {
-        max-width: 1000px;
+    .signup {
+        max-width: 50%;
         width: 100vw;
-        display: flex;
-        border-radius: 5px;
         background-color: $sidebar-color;
 
         &__page {
@@ -44,15 +39,18 @@
                 text-align: center;
                 margin-bottom: 4%;
 
-                a {
+                a, span {
                     color: $text-white;
                     font-size: 1.2vw;
                     font-weight: 300;
 
+                }
+                a {
+                    text-decoration: underline;
+
                     &:hover {
-                            color: #C8CEDE;
-                            ;
-                        }
+                        color: #C8CEDE;;
+                    }
                 }
             }
 
@@ -83,18 +81,17 @@
                     display: flex;
                     flex-direction: column;
 
+                   
 
                 }
-
-               
             }
         }
 
     }
 
-    .login__welcome {
+    .signup__welcome {
         background-image: url("../../Assets/bg-login.webp");
-        padding: 6% 5% 0 5%;
+        padding: 5% 5% 0 5%;
         position: fixed;
         right: 0;
         top: 0;
@@ -120,9 +117,10 @@
             img {
                 margin: auto;
                 max-width: 100%;
-                width: 30vw;
+                width: 25vw;
                 display: flex;
             }
         }
     }
+
 }

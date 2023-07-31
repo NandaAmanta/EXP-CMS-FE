@@ -1,0 +1,22 @@
+@use "../../Style/" as *;
+
+ label {
+     font-weight: 600 !important;
+     font-size: 1.1vw !important;
+     display: inline-block ;
+ }
+
+ input {
+     padding: 1.5% 3%;
+     background: #33333E !important;
+     box-shadow: 0px 2px 5px 0px rgba(3, 3, 3, 0.25) ;
+     color: $text-white !important;
+     margin-top: 12px !important;
+     font-size: 1.2vw !important;
+     transition: .3s;
+
+
+     &:focus {
+         box-shadow: 0px 0px 10px 2px rgba(238, 238, 246, 0.25);
+     }
+ }

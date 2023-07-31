@@ -1,10 +1,10 @@
-import { useEffect } from "react";
+import {Stepper} from '../Components/Stepper/Stepper';
 
 function CreateWebsite() {
-  useEffect(() => {
-    document.title = "CMS EXP - Create Website";
-  });
-
-  return <div>CreateWebsite</div>;
+  return (
+    <div>
+      <Stepper step={1} />
+    </div>
+  );
 }
 export default CreateWebsite;

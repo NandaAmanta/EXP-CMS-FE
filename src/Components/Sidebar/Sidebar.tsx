@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import Logo from "../../Assets/exp-logo.png";
+import Logo from "../../Assets/exp-logo.webp";
 import SidebarItem from "./SidebarItem";
 import "./Sidebar.scss";
 import {navLink} from "./SidebarMenu"
@@ -139,7 +139,9 @@ function Sidebar({
                         paddingRight: isOpen ? "30px" : "0",
                       }}
                     >
-                      <div className="icon">{route.icon}</div>
+                      <div className="icon" style={{ padding: "3px 0" }}>
+                        {route.icon}
+                      </div>
                       <AnimatePresence>
                         {isOpen && (
                           <motion.div
@@ -185,7 +187,9 @@ function Sidebar({
                       paddingRight: isOpen ? "30px" : "0",
                     }}
                   >
-                    <div className="icon">{route.icon}</div>
+                    <div className="icon" style={{ padding: "3px 0" }}>
+                      {route.icon}
+                    </div>
                     <AnimatePresence>
                       {isOpen && (
                         <motion.div

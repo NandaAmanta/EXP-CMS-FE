@@ -1,5 +1,5 @@
 import CardList from '../Components/CardList/CardList';
-import { useEffect } from "react";
+import Chart from "../Components/Chart/Chart";
 
 
 function Dashboard() {
@@ -9,6 +9,7 @@ function Dashboard() {
   return (
     <>
       <CardList />
+      <Chart />
     </>
   )
 }

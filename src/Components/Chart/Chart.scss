@@ -1,0 +1,55 @@
+@use "../../Style/" as *;
+
+.top_overview {
+    margin-top: 120px;
+    margin-bottom: 25px;
+}
+
+.overview {
+    &__top {
+        margin-bottom: 35px;
+    }
+
+    &__text_chart {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 500;
+
+        select {
+            background: transparent;
+            border: none;
+            color: $text-white;
+            font-weight: 500;
+            text-align: right;
+
+        }
+    }
+
+    // &__chart {
+
+    // }
+
+    &__total_used {
+        display: flex;
+        margin-top: 20px;
+
+        .text_total {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            margin: 0 40px 0 0;
+
+            span {
+                font-size: 28px;
+                font-weight: 500;
+
+                &:nth-child(2) {
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: $text-dark;
+                }
+            }
+        }
+    }
+
+}

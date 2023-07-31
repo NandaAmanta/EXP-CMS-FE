@@ -1,5 +1,7 @@
 import welcomee from "../../Assets/welcomee.svg";
-import Logo from "../../Assets/exp-logo.png";
+import Logo from "../../Assets/exp-logo.webp";
+import Input from "../Input/Input";
+import Button from "../Button/Button";
 import "./LoginPage.scss";
 
 function Login() {
@@ -13,36 +15,55 @@ function Login() {
                 <img src={Logo} alt="" />
               </div>
               <div className="form_text">
-                <h1>Log in</h1>
-                <p>
-                  Log in with your data that you entered during your
+                <h1 className="font-bold">Log in</h1>
+                <p className="font-light">
+                  Log in with your data that you entered <br /> during your
                   registration
                 </p>
               </div>
-              <form action="">
+              <form action="" className="form-control">
                 <div className="form_group">
-                  <label htmlFor="email">Enter your email address</label> <br />
-                  <input type="email" id="email" name="email" required />
-                </div>
-                <div className="form_group">
-                  <label htmlFor="password">Enter your password</label> <br />
-                  <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    required
+                  <Input
+                    label="Enter your email address"
+                    inputProps={{
+                      type: "email",
+                      id: "email",
+                      name: "email",
+                      className: "input input-bordered w-full",
+                    }}
                   />
                 </div>
-                <button type="submit">Log in</button> <br />
+                <div className="form_group">
+                  <Input
+                    label="Enter your password"
+                    inputProps={{
+                      type: "password",
+                      id: "password",
+                      name: "password",
+                      className: "input input-bordered w-full",
+                    }}
+                  />
+                </div>
+                <Button type="submit">Log in</Button>
+                <br />
               </form>
-              <div className="form_group">
+
+              <div className="form_forget">
                 <a href=""> Forgot Password?</a>
               </div>
               <div className="line-sidebar"></div>
+              <div className="form_signup">
+                <a href="/signup">Sign up now</a>
+              </div>
             </div>
           </div>
-          
-          <div className="login__welcome">
+        </div>
+        <div className="login__welcome">
+          <div className="welcome_text">
+            <span className="font-light">Nice to see you again</span>
+            <h1 className="font-bold">Welcome Back</h1>
+          </div>
+          <div className="welcome_img">
             <img src={welcomee} alt="" />
           </div>
         </div>

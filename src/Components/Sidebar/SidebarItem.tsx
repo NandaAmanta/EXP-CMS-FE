@@ -61,9 +61,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
     <>
       <NavLink
         to={menu.path}
-        className={`${
-          isSubmenuOpen ? "routes__link active" : "routes__link active"
-        }`}
+        className={`${isSubmenuOpen ? "routes__link active" : "routes__link "}`}
         style={{
           justifyContent: isOpen ? "" : "center",
           paddingLeft: isOpen ? "30px" : "0",
@@ -71,7 +69,9 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
         }}
         onClick={toggleSubmenu}
       >
-        <div className="icon">{menu.icon}</div>
+        <div className="icon" style={{ padding: "3px 0" }}>
+          {menu.icon}
+        </div>
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -99,7 +99,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
           animate={submenuOpen ? "show" : "hidden"}
           exit="hidden"
           style={{
-            marginTop: submenuOpen ? "-24px" : "-13px", // Set marginTop to 0 when submenuOpen, else -20px
+            marginTop: submenuOpen ? "-14px" : "-13px", // Set marginTop to 0 when submenuOpen, else -20px
             paddingLeft: isOpen ? "27px" : "0",
           }}
         >
@@ -117,7 +117,9 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
                 }`}
                 onClick={handleLinkClick}
               >
-                <div className="icon">{subRoute.icon}</div>
+                <div className="icon" style={{ padding: "3px 0" }}>
+                  {subRoute.icon}
+                </div>
                 <AnimatePresence>
                   {isOpen && (
                     <motion.div
