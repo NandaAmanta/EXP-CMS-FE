@@ -13,7 +13,7 @@ interface DropdownSelection {
 }
 
 export const RenderLineChart: React.FC = () => (
-  <div style={{ width: "83vw" }} className="sm:w-auto md:w-full  ">
+  <div className="sm:w-auto md:w-full lg:w-full">
     <ResponsiveContainer width="100%" height={300}>
       <LineChart data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
         <Line
