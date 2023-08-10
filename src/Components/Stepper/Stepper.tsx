@@ -3,9 +3,19 @@ import Box from "@mui/material/Box";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import ButtonStep from "../ButtonStep/ButtonStep";
+import "./Stepper.scss"
+
+// import step form
 import WebsiteProfile from './WebsiteProfile';
+import NavbarSelect from './NavbarSelect';
+import BannerSelect from './BannerSelect';
+import FooterSelect from './FooterSelect';
+import CheckPage from './CheckPage';
+
+import { StepperProvider } from "./StepperContext";
+
 
 const steps = [
   "Website Profile",
@@ -17,44 +27,13 @@ const steps = [
 
 export default function HorizontalLinearStepper() {
   const [activeStep, setActiveStep] = React.useState(0);
-  const [skipped, setSkipped] = React.useState(new Set<number>());
-
-  const isStepOptional = (step: number) => {
-    return step === 1;
-  };
-
-  const isStepSkipped = (step: number) => {
-    return skipped.has(step);
-  };
-
+  
   const handleNext = () => {
-    let newSkipped = skipped;
-    if (isStepSkipped(activeStep)) {
-      newSkipped = new Set(newSkipped.values());
-      newSkipped.delete(activeStep);
-    }
-
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    setSkipped(newSkipped);
   };
 
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
-
-  const handleSkip = () => {
-    if (!isStepOptional(activeStep)) {
-      // You probably want to guard against something like this,
-      // it should never occur unless someone's actively trying to break something.
-      throw new Error("You can't skip a step that isn't optional.");
-    }
-
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    setSkipped((prevSkipped) => {
-      const newSkipped = new Set(prevSkipped.values());
-      newSkipped.add(activeStep);
-      return newSkipped;
-    });
   };
 
   const handleReset = () => {
@@ -62,45 +41,67 @@ export default function HorizontalLinearStepper() {
   };
 
   return (
-    <Box sx={{ width: "100%" }}>
-      <Stepper activeStep={activeStep} alternativeLabel>
-        {steps.map((label, index) => {
-          return (
-            <Step key={label}>
-              <StepLabel>{label}</StepLabel>
-            </Step>
-          );
-        })}
-      </Stepper>
-      {activeStep === steps.length ? (
-        <React.Fragment>
-          <Typography sx={{ mt: 2, mb: 1 }}>
-            All steps completed - you&apos;re finished
-          </Typography>
-          <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-            <Box sx={{ flex: "1 1 auto" }} />
-            <Button onClick={handleReset}>Reset</Button>
-          </Box>
-        </React.Fragment>
-      ) : (
-        <React.Fragment>
-         {activeStep === 0 && <WebsiteProfile />}
-          <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-            <Button
-              color="inherit"
-              disabled={activeStep === 0}
-              onClick={handleBack}
-              sx={{ mr: 1 }}
-            >
-              Back
-            </Button>
-            <Box sx={{ flex: "1 1 auto" }} />
-            <Button onClick={handleNext}>
-              {activeStep === steps.length - 1 ? "Finish" : "Next"}
-            </Button>
-          </Box>
-        </React.Fragment>
-      )}
-    </Box>
+    <StepperProvider>
+      <Box sx={{ width: "100%" }}>
+        {activeStep === 0 && (
+          <h1 className="text-3xl font-bold mb-8">Website Profile</h1>
+        )}
+        {activeStep === 1 && (
+          <h1 className="text-3xl font-bold mb-8">Select Navbar Style</h1>
+        )}
+        {activeStep === 2 && (
+          <h1 className="text-3xl font-bold mb-8">Select Banner Style</h1>
+        )}
+        {activeStep === 3 && (
+          <h1 className="text-3xl font-bold mb-8">Select Footer Style</h1>
+        )}
+        {activeStep === 4 && (
+          <h1 className="text-3xl font-bold mb-8">Confirmation</h1>
+        )}
+        <Stepper activeStep={activeStep} alternativeLabel>
+          {steps.map((label, index) => {
+            return (
+              <Step key={label}>
+                <StepLabel className="text-3xl">{label}</StepLabel>
+              </Step>
+            );
+          })}
+        </Stepper>
+        {activeStep === steps.length ? (
+          <React.Fragment>
+            <Typography sx={{ mt: 2, mb: 1 }}>
+              All steps completed - you&apos;re finished
+            </Typography>
+            <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+              <Box sx={{ flex: "1 1 auto" }} />
+              <ButtonStep onClick={handleReset}>Reset</ButtonStep>
+            </Box>
+          </React.Fragment>
+        ) : (
+          <div className="mt-12">
+            {activeStep === 0 && <WebsiteProfile />}
+            {activeStep === 1 && <NavbarSelect />}
+            {activeStep === 2 && <BannerSelect />}
+            {activeStep === 3 && <FooterSelect />}
+            {activeStep === 4 && <CheckPage />}
+            <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+              <ButtonStep
+                outline
+                color="inherit"
+                disabled={activeStep === 0}
+                onClick={handleBack}
+                sx={{ mr: 1 }}
+              >
+                Previous
+              </ButtonStep>
+              <Box sx={{ flex: "1 1 auto" }} />
+              <ButtonStep onClick={handleNext}>
+                {activeStep === steps.length - 1 ? "Finish" : "Next"}
+              </ButtonStep>
+            </Box>
+          </div>
+        )}
+      </Box>
+    </StepperProvider>
   );
 }

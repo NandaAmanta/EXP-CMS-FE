@@ -1,5 +1,5 @@
 import React, { ButtonHTMLAttributes } from "react";
-import "./Button.scss"
+import "./ButtonStep.scss";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   outline?: boolean;
@@ -7,17 +7,17 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   sx?: { [key: string]: any };
 }
 
-const Button: React.FC<ButtonProps> = ({
+const ButtonStep: React.FC<ButtonProps> = ({
   children,
   outline,
   className,
   sx,
   ...buttonProps
 }) => {
-  const buttonClassName = `button btn${
+  const buttonClassName = `btn${
     outline
-      ? " btn-outline btn-xs sm:btn-sm md:btn-md"
-      : " btn-xs sm:btn-sm md:btn-md"
+      ? " outline btn-outline btn-xs sm:btn-sm md:btn-md"
+      : " btn-step btn-xs sm:btn-sm md:btn-md"
   }${className ? " " + className : ""}`;
 
   return (
@@ -27,4 +27,4 @@ const Button: React.FC<ButtonProps> = ({
   );
 };
 
-export default Button;
+export default ButtonStep;

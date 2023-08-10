@@ -1,2 +1,9 @@
+@use "../../Style/" as *;
 
-
+.btn.btn-disabled,
+.btn[disabled],
+.btn:disabled {
+    color: #484C57 !important;
+    border: 1px solid #484C57 !important;
+    background-color: transparent !important;
+}

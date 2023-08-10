@@ -1,0 +1,24 @@
+@use "../../Style/" as *;
+
+.outline {
+    border: 1px solid $text-white !important;
+    color: $text-white !important;
+     
+    &:hover {
+    background-color: $text-white !important;
+    color: $line-color !important;
+    }
+
+    &::before {
+            content: "<";
+        }
+}
+.btn-step {
+    background-color: $text-white !important;
+    color: $line-color !important;
+
+    &::after {
+        content: ">";
+    }
+}
+
