@@ -2,18 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addNote } from "../../Actions/cmsActions";
  
-interface nama {
-  nama1 : string,
-  nama2 : string
-}
-function test(call : nama) {
-  return console.log(call.nama1 + ' dan ' + call.nama2);
-}
 
-test({nama1 : 'dino' , nama2 : 'santhi'})
-
-const point = { nama1: '12', nama2: '26', tai:'20' };
-test(point);
 
 
 export default function NavbarCard({navbarStyle} : {navbarStyle:string}) {
