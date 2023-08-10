@@ -1,8 +1,23 @@
 import React, { useState } from "react";
-import "./NavbarCard.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { addNote } from "../../Actions/cmsActions";
+ 
+interface nama {
+  nama1 : string,
+  nama2 : string
+}
+function test(call : nama) {
+  return console.log(call.nama1 + ' dan ' + call.nama2);
+}
+
+test({nama1 : 'dino' , nama2 : 'santhi'})
+
+const point = { nama1: '12', nama2: '26', tai:'20' };
+test(point);
 
 
 export default function NavbarCard({navbarStyle} : {navbarStyle:string}) {
+  const dispatch = useDispatch()
   return (
         <div className={navbarStyle}>
           <div className="navbar-start">
@@ -31,7 +46,7 @@ export default function NavbarCard({navbarStyle} : {navbarStyle:string}) {
               <li><a>Item 3</a></li>
               <li><a>Item 4</a></li>
             </ul>
-            <button className="btn btn-primary">Primary</button>
+              <button className="btn btn-primary">Button</button>
           </div>
         </div>
   )

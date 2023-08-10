@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom"
 import Dashboard from '../Pages/Dashboard';
 import MasterDataNavbar from '../Pages/MasterDataNavbar';
+import AddNavbarModal from "../Components/NavbarMasterData/AddNavbar";
 import MasterDataBanner from '../Pages/MasterDataBanner';
 import MasterDataFooter from '../Pages/MasterDataFooter';
 import CreateWebsite from '../Pages/CreateWebsite';
@@ -13,6 +14,7 @@ const Routing: React.FC = () => {
     <Routes>
       <Route path="/" element={<Dashboard />} />
       <Route path="/master-data/navbar" element={<MasterDataNavbar />} />
+      <Route path="/master-data/navbar/add-navbar" element={<AddNavbarModal></AddNavbarModal>} />
       <Route path="/master-data/banner" element={<MasterDataBanner />} />
       <Route path="/master-data/footer" element={<MasterDataFooter />} />
       <Route path="/create-website" element={<CreateWebsite />} />

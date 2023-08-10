@@ -5,3 +5,11 @@
     margin-bottom: 40px;
   }
 }
+
+// modal start //
+.modalB{
+  border-radius: 5px;
+  & input {
+    background-color: #00000033 !important;
+  }
+}

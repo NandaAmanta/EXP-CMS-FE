@@ -3,9 +3,7 @@ import Chart from "../Components/Chart/Chart";
 
 
 function Dashboard() {
-  useEffect(() => {
-    document.title = "CMS EXP - Dashboard" 
-  })
+
   return (
     <>
       <CardList />
