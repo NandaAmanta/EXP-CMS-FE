@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import BannerMasterData from '../Components/BannerMasterData/BannerMasterData';
 
 function MasterDataBanner() {
   useEffect(() => {
@@ -6,7 +7,9 @@ function MasterDataBanner() {
   })
 
   return (
-    <div>MasterDataBanner</div>
+    <div>
+      <BannerMasterData></BannerMasterData>
+    </div>
   )
 }
 export default MasterDataBanner

@@ -4,7 +4,6 @@ import { addNote } from "../../Actions/cmsActions";
  
 
 
-
 export default function NavbarCard({navbarStyle} : {navbarStyle:string}) {
   const dispatch = useDispatch()
   return (
