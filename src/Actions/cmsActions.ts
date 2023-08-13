@@ -5,17 +5,17 @@ import {
   DataActionTypes,
 } from "../Types/actionsType";
 
-export const addActions = (data: string): DataActionTypes => ({
+export const addNote = (data: string): DataActionTypes => ({
   type: ADD_DATA,
   payload: data,
 });
 
-export const deleteActions = (id: number): DataActionTypes => ({
+export const deleteNote = (id: number): DataActionTypes => ({
   type: REMOVE_DATA,
   payload: id,
 });
 
-export const updateActions = (id: number, data: string): DataActionTypes => ({
+export const updateNote = (id: number, data: string): DataActionTypes => ({
   type: UPDATE_DATA,
   payload: {
     id,

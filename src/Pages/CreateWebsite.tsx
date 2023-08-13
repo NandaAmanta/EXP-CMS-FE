@@ -7,4 +7,4 @@ function CreateWebsite() {
     </div>
   );
 }
-export default CreateWebsite;
+export default CreateWebsite

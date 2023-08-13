@@ -20,14 +20,12 @@ const cmsReducer = (
 ): DataState => {
   switch (action.type) {
     case ADD_DATA:
-      const newAddedData: Data = {
-        id: state.payload.length + 1,
-        content: action.payload,
-      };
-
       return {
         ...state,
-        payload: [...state.payload, newAddedData],
+        payload: [
+          ...state.payload,
+          { id: Date.now(), content: action.payload },
+        ],
       };
 
     case UPDATE_DATA:
