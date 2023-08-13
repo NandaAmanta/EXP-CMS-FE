@@ -1,10 +1,15 @@
 @use "../../Style/" as *;
 
 .login-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     .login {
-        max-width: 50%;
+        max-width: 1000px;
         width: 100vw;
+        display: flex;
+        border-radius: 5px;
         background-color: $sidebar-color;
 
         &__page {
@@ -120,5 +125,4 @@
             }
         }
     }
-
 }

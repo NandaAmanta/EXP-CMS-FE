@@ -1,6 +1,15 @@
+import { useEffect } from "react";
+import NavbarMasterData from '../Components/NavbarMasterData/NavbarMasterData';
+
 function MasterDataNavbar() {
+  useEffect(() => {
+    document.title = "Master Data - Navbar" 
+  })
+
   return (
-    <div>MasterDataNavbar</div>
+    <div>
+      <NavbarMasterData></NavbarMasterData>
+    </div>
   )
 }
 export default MasterDataNavbar

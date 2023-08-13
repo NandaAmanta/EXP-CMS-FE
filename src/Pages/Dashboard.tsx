@@ -3,6 +3,7 @@ import Chart from "../Components/Chart/Chart";
 
 
 function Dashboard() {
+
   return (
     <>
       <CardList />
