@@ -139,7 +139,9 @@ function Sidebar({
                         paddingRight: isOpen ? "30px" : "0",
                       }}
                     >
-                      <div className="icon">{route.icon}</div>
+                      <div className="icon" style={{ padding: "3px 0" }}>
+                        {route.icon}
+                      </div>
                       <AnimatePresence>
                         {isOpen && (
                           <motion.div
@@ -185,7 +187,9 @@ function Sidebar({
                       paddingRight: isOpen ? "30px" : "0",
                     }}
                   >
-                    <div className="icon">{route.icon}</div>
+                    <div className="icon" style={{ padding: "3px 0" }}>
+                      {route.icon}
+                    </div>
                     <AnimatePresence>
                       {isOpen && (
                         <motion.div
